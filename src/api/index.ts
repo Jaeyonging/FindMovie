@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Coin } from "../types/coin";
+import { Coin } from "../types/movie";
 
 const BASE_URL = 'https://api.upbit.com/v1';
 
