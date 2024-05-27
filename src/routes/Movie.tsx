@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { MovieCard } from "../components/MovieCard";
 import { ResetButton } from "../components/ResetButton";
+import { Loading } from "../components/Loading";
 
 export const Movie = () => {
   const [title, setTitle] = useState<string>("");
@@ -11,6 +12,7 @@ export const Movie = () => {
   const [response, setResponse] = useState("false")
 
   let movieAPI = import.meta.env.VITE_MOVIE_KEY
+
   const {
     data: movie, isFetching, isError } = useQuery(["searchMovie"],
       () =>
@@ -38,17 +40,18 @@ export const Movie = () => {
       {searchActive && !isFetching && (
         <>
           <div>Search movie you want to watch in English</div>
+          <img className="movieposter" src="../film.png"></img>
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           ></input>
-          <button onClick={searchMovie}>search</button>
+          <button className="searchButton" onClick={searchMovie}>search</button>
         </>
       )}
 
       {
         isFetching ? (
-          <div>Loading...</div>
+          <Loading></Loading>
         ) :
           isError ? (
             <div>Error occurred while fetching data</div>

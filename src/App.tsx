@@ -2,6 +2,7 @@ import { Suspense, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import { Movie } from "./routes/Movie";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Route path="/" element={<Movie></Movie>} />
         </Routes>
       </Suspense>
+      <Footer></Footer>
     </>
   );
 }
