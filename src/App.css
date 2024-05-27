@@ -136,6 +136,13 @@
   width: 100px;
 }
 
+.resetButton{
+  margin:20px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  min-width: 100px;
+}
+
 .footer{
   display:flex;
   justify-content: center;

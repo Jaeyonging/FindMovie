@@ -6,6 +6,6 @@ interface Props {
 
 export const ResetButton = ({ onClick }: Props) => {
     return (
-        <button onClick={onClick}>다시 검색하기</button>
+        <button className='resetButton' onClick={onClick}>다시 검색하기</button>
     );
 };
